@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student name:</strong>
+  <%= @student.student_name %>
+</p>
+
+<p>
+  <strong>Student father name:</strong>
+  <%= @student.student_father_name %>
+</p>
+
+<p>
+  <strong>Student roll no:</strong>
+  <%= @student.student_roll_no %>
+</p>
+
+<p>
+  <strong>Fee:</strong>
+  <%= @student.fee %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
+<%= link_to "PRINT", '#', onclick: "printpage()" %>
+
