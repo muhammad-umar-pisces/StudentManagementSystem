@@ -1,28 +1,45 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Students</h1>
-
-<table>
-  <thead>
+<div class="search">
+<%= form_tag students_path , :method => 'get' do %>
+<%= text_field_tag :search , params[:search] , :class => 'search-bar', placeholder: "Enter Name" %>
+<%= submit_tag "search" , :class => "btn btn-primary search-btn" %>
+<% end %>
+</div>
+<span>Total Students in school</span>(
+<%= current_user.students.count %>)
+<table class="table">
+  <thead class="thead-dark">
     <tr>
-      <th>Student name</th>
-      <th>Student father name</th>
-      <th>Student roll no</th>
-      <th>Fee</th>
-      <th colspan="3"></th>
+      <th scope="col">Student name</th>
+      <th scope="col">Student father name</th>
+      <th scope="col">Student roll no</th>
+      <th scope="col">Student class</th>
+      <th scope="col">Fee</th>
+     <!-- <th scope="col">Created at</th>-->
+      <th scope="col">Month </th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @students.each do |student| %>
+    <% current_user.students.each do |student| %>
       <tr>
         <td><%= student.student_name %></td>
         <td><%= student.student_father_name %></td>
-        <td><%= student.student_roll_no %></td>
+        <td><%= student.student_roll_no %>
+        <td><%= student.student_class %></td>
         <td><%= student.fee %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?'} %></td>
+       <!-- <td><%= student.created_at %></td>-->
+        <td><%= student.Month %></td>
+        <td><%= link_to 'Show', student , :class => "btn btn-info" %></td>
+        <td><%= link_to 'Edit', edit_student_path(student), :class => "btn btn-warning" %></td>
+        <td><%= link_to  'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' , :class => "btn btn-danger"} %></td>
+         <td><%= link_to 'Grade Book' , standard_student_path(student),:class => "btn btn-success" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +47,6 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to 'New Student', new_student_path if @current_user.admin? %>
+
+

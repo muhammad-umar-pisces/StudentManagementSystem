@@ -1,0 +1,42 @@
+<%= form_with(model: metric, local: true) do |form| %>
+  <% if metric.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(metric.errors.count, "error") %> prohibited this metric from being saved:</h2>
+
+      <ul>
+      <% metric.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Math, :required => true %>
+    <%= form.number_field :Math %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Physics, :required => true %>
+    <%= form.number_field :Physics %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Chemistry, :required => true %>
+    <%= form.number_field :Chemistry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Biology, :required => true %>
+    <%= form.number_field :Biology %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Computer, :required => true %>
+    <%= form.number_field :Computer %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

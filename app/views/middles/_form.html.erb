@@ -1,0 +1,57 @@
+<%= form_with(model: middle, local: true) do |form| %>
+  <% if middle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(middle.errors.count, "error") %> prohibited this middle from being saved:</h2>
+
+      <ul>
+      <% middle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Islamiat, :required => true%>
+    <%= form.number_field :Islamiat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Pak_studies, :required => true %>
+    <%= form.number_field :Pak_studies %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Math, :required => true %>
+    <%= form.number_field :Math %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Science, :required => true %>
+    <%= form.number_field :Science %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Arabic, :required => true %>
+    <%= form.number_field :Arabic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Urdu, :required => true %>
+    <%= form.number_field :Urdu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :English, :required => true %>
+    <%= form.number_field :English %>
+  </div>
+
+    <div class="field">
+    <%= form.hidden_field :student_id value: current_student.id %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

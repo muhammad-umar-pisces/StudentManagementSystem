@@ -12,28 +12,29 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :student_name %>
-    <%= form.text_field :student_name %>
+    <%= form.label :student_name  %>
+    <%= form.text_field :student_name, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :student_father_name %>
-    <%= form.text_field :student_father_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :student_roll_no %>
-    <%= form.number_field :student_roll_no %>
+    <%= form.text_field :student_father_name, :required => true %>
   </div>
 
   <div class="field">
     <%= form.label :fee %>
-    <%= form.number_field :fee %>
+    <%= form.number_field :fee, :required => true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :student_class %>
+    <%= form.number_field :student_class, :required => true %>
   </div>
 
   <div class="field">
     <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
+
 
   <div class="actions">
     <%= form.submit %>

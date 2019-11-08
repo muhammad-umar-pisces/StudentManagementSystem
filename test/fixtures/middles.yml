@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Islamiat: 1
+  Pak_studies: 1
+  Math: 1
+  Science: 1
+  Arabic: 1
+  Urdu: 1
+  English: 1
+
+two:
+  Islamiat: 1
+  Pak_studies: 1
+  Math: 1
+  Science: 1
+  Arabic: 1
+  Urdu: 1
+  English: 1

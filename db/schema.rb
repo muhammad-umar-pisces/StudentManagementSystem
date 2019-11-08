@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_051204) do
+ActiveRecord::Schema.define(version: 2019_11_03_051353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "metrics", force: :cascade do |t|
+    t.integer "Math"
+    t.integer "Physics"
+    t.integer "Chemistry"
+    t.integer "Biology"
+    t.integer "Computer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "student_id"
+  end
+
+  create_table "middles", force: :cascade do |t|
+    t.integer "Islamiat"
+    t.integer "Pak_studies"
+    t.integer "Math"
+    t.integer "Science"
+    t.integer "Arabic"
+    t.integer "Urdu"
+    t.integer "English"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "student_id"
+  end
 
   create_table "students", force: :cascade do |t|
     t.string "student_name"
@@ -23,6 +47,8 @@ ActiveRecord::Schema.define(version: 2019_10_30_051204) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "Month"
+    t.integer "student_class"
   end
 
   create_table "users", force: :cascade do |t|

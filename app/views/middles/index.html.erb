@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Middles</h1>
+<%= link_to "Home", students_path %>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Islamiat</th>
+      <th scope="col">Pak studies</th>
+      <th scope="col">Math</th>
+      <th scope="col">Science</th>
+      <th scope="col">Arabic</th>
+      <th scope="col">Urdu</th>
+      <th scope="col">English</th>
+      <th scope="col">Obtained Marks</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+        <td><%= @middles.Islamiat %></td>
+        <td><%= @middles.Pak_studies %></td>
+        <td><%= @middles.Math %></td>
+        <td><%= @middles.Science %></td>
+        <td><%= @middles.Arabic %></td>
+        <td><%= @middles.Urdu %></td>
+        <td><%= @middles.English %></td>
+        <%# @marks = @middles.Islamiat+@middles.Pak_studies+@middles.Math+@middles.Science+@middles.Arabic+@middles.Urdu+@middles.English%>
+        <td><%= @marks %></td>
+        <td><%= link_to 'Show', @middles , :class =>"btn btn-info"%></td>
+        <td><%= link_to 'Edit', edit_middle_path(@middles), :class =>"btn btn-info" %></td>
+        <td><%= link_to 'Destroy', @middles, method: :delete, data: { confirm: 'Are you sure?', :class =>"btn btn-danger" } %></td>
+      </tr>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Middle', new_middle_path %>

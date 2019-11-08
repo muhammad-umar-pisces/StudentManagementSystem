@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Math: 1
+  Physics: 1
+  Chemistry: 1
+  Biology: 1
+  Computer: 1
+
+two:
+  Math: 1
+  Physics: 1
+  Chemistry: 1
+  Biology: 1
+  Computer: 1

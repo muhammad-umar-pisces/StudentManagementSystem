@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Math:</strong>
+  <%= @metric.Math %>
+</p>
+
+<p>
+  <strong>Physics:</strong>
+  <%= @metric.Physics %>
+</p>
+
+<p>
+  <strong>Chemistry:</strong>
+  <%= @metric.Chemistry %>
+</p>
+
+<p>
+  <strong>Biology:</strong>
+  <%= @metric.Biology %>
+</p>
+
+<p>
+  <strong>Computer:</strong>
+  <%= @metric.Computer %>
+</p>
+
+<%= link_to 'Edit', edit_metric_path(@metric) %> |
+<%= link_to 'Back', metrics_path %>

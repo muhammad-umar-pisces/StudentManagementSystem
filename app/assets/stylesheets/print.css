@@ -1,5 +1,3 @@
-@media print {
-  div.info, div#editStuff, div#navigation, div#debug {
+div.transpose-keys, div#editSong, div#navigation, div#debug{
     display: none;
-  }
 }
