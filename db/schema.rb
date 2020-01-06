@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2019_11_03_051353) do
   create_table "students", force: :cascade do |t|
     t.string "student_name"
     t.string "student_father_name"
-    t.integer "student_roll_no"
     t.integer "fee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
